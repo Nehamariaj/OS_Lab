@@ -1,6 +1,5 @@
 echo "Enter a number"
 read num
-b=1
 a=1
 for((i=1;i<=$num;i++))
 do
