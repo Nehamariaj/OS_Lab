@@ -1,6 +1,6 @@
 #include<stdio.h>
 void main(){
-int limit,tot_wt,tot_tat,temp,temp2;
+int limit,tot_wt=0,tot_tat=0,temp,temp2; 
 printf("enter the no of process:");
 scanf("%d",&limit);
 int process[limit],bt[limit],wt[limit],tat[limit];
@@ -16,7 +16,7 @@ printf("        %d",bt[i]);
 printf("\n");
 }
 for(int i=0;i<limit;i++){
-for(int j=i+1;j<limit;j++){
+for(int j=i;j<limit;j++){
 if(bt[i]>bt[j]){
 temp=bt[i];
 bt[i]=bt[j];
