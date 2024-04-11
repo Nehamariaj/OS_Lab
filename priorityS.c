@@ -1,6 +1,6 @@
 #include<stdio.h>
 void main(){
-int limit,tot_wt,tot_tat,temp,temp2,temp3;
+int limit,tot_wt=0,tot_tat=0,temp,temp2,temp3;
 printf("enter the no of process:");
 scanf("%d",&limit);
 int process[limit],bt[limit],wt[limit],tat[limit],priority[limit];
