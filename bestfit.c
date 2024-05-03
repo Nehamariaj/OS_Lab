@@ -24,19 +24,21 @@ void main(){
       m[i].allocation=0;
     }
     printf("After allocation:\n");
-     printf("Process_Size Memory_Block_Size\n");
+    printf("Process_Size Memory_Block_Size\n");
     for(int i=0;i<p_limit;i++){
+        int best_index=-1;
         for(int j=0;j<m_limit;j++){
-            if(p[i].p_size<=m[j].m_size){
-                if(m[j].allocation==1)
-                   continue;
-                else{
-                    m[j].allocation=1;
-                    p[i].flag=1;
-                    printf("      %d               %d\n",p[i].p_size,m[j].m_size);
-                    break;
-                }
+            if(m[j].m_size>=p[i].p_size && m[j].allocation==0){
+                if(best_index==-1)
+                  best_index=j;
+                else if(m[best_index].m_size>m[j].m_size)
+                  best_index=j;
             }
+        }
+        if(best_index!=-1){
+            m[best_index].allocation=1;
+            p[i].flag=1;
+            printf("      %d               %d\n",p[i].p_size,m[best_index].m_size);
         }
     }
     for(int i=0;i<p_limit;i++){
