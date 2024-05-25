@@ -83,14 +83,19 @@ for(j=0; j<=n; j++) //Loop starts from headposition. (ie. 0th index of queue)
 {
 // Finding the difference between next position and current position.
 difference = absoluteValue(queue[j+1]-queue[j]);
+//the value of difference shouldn't be negative,so make it positive if it is a negative value
+if(difference<0){
+    difference=-(difference);
+}
+
 // Adding difference to the current seek time value
-seek = seek + difference;
+seek = (seek + difference);
 // Displaying a message to show the movement of disk head
 printf("Disk head moves from position %d to %d with Seek %d \n",
 queue[j], queue[j+1], difference);
 }
 // Calculating Average Seek time
-averageSeekTime = seek/(float)n;
+averageSeekTime =(seek/(float)n);
 //Display Total and Average Seek Time(s)
 printf("Total Seek Time= %d\n", seek);
 printf("Average Seek Time= %f\n", averageSeekTime);
